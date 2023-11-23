@@ -1,5 +1,3 @@
-# 基本的には絶対パスでルーティングするように
-
 /
 
 # app/server/misc/nodeinfo.py
@@ -13,11 +11,16 @@
 # app/server/misc/webfinger.py
 /.well-known/webfinger?resource={resource}
 
-/user/{id}
-/user/{id}/actor
+/user/{id} # application/activity+json なら /actor に転送する
+/user/{id}/actor # acceptヘッダの要求
 /user/{id}/inbox
 /user/{id}/outbox
+/user/{id}/followers
+/user/{id}/following
+/user/{id}/collections/featured
 
 ## Shared inbox
+/inbox
 
 /authorize_follow
+/share
