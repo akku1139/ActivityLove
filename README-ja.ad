@@ -1,0 +1,65 @@
+= ActivityLove =
+小さなActivityPub実装
+
+== Features / Habits==
+* ユーザーidに使用できる文字列は `[0-9a-zA-Z_\.]+` です。
+* ユーザーidは大文字と小文字が区別されません。
+
+== Setup ==
+
+=== Requirements ===
+* Python 3.5以降が必要です
+
+=== Install ===
+. ユーザーの作成 (任意) +
+少なくともrootユーザーで動かすことはお勧めしません。 +
+`# adduser --disabled-password --disabled-login activitylove` +
+`$ su - activitylove`
+
+. リポジトリのクローン +
+`$ git clone -b .+ https://github.com/akku1139/activitylove.git` +
+Hint: `--depth=1` を使用すると早く終わるでしょう。
+
+. 依存パッケージのインストール +
+`pip install -r requirements.txt` +
+また、任意のASGIサーバーが必要です。 https://techpr.info/python/uvicorn-hypercorn-daphne/[比較をどうぞ] +
+`pip install (uvicorn|hypercorn|daphne|or other)` (Uvicornは動作確認済み) +
+Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うなら standard でインストールすれば高速に動きます。]
+
+. 環境変数の設定 +
+`. ./env.sh`
+
+=== Configuration ===
+
+
+=== Launch ===
+`cd app && uvicord main:app` Uvicornの場合 +
+Hint: 他の処理系を使えば早くなる可能性があります。また、`-O` `-OO` オプションでも高速化されるかもしれません。
+
+== Update ==
+. `git pull`
+. `pip install -r requirements.txt`
+. マイグレーション
+
+== LICENSE ==
+ActivityLove : A tiny ActivityPub server
+Copyright (C) 2023 akku
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as 
+published by the Free Software Foundation; either version 3 of the 
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+== Donate ==
+寄付をしていただければ開発のやる気につながるかもしれません。 +
+XMR: `47UhkFdB4wrH8YGCshYtjPHFmktYdVeQZhHpj6e6Aammcy6cWWALZWJAybA4xFgk94UXsKGKaZtGSB8QwoHrG7ao7wJ62Xs` +
+ETH: `0x75790924D5Fb371C29AF81E9816a308500c24538` (Polygonチェーンがおすすめ) +
+MONA: `MACYgBCyysdPBxxF8nRbAgM22hkZMETfZk`

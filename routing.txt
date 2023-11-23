@@ -1,0 +1,23 @@
+# 基本的には絶対パスでルーティングするように
+
+/
+
+# app/server/misc/nodeinfo.py
+/.well-known/nodeinfo
+/nodeinfo/2.0
+/nodeinfo/2.1
+
+# app/server/misc/hostmeta.py
+/.well-known/host-meta
+
+# app/server/misc/webfinger.py
+/.well-known/webfinger?resource={resource}
+
+/user/{id}
+/user/{id}/actor
+/user/{id}/inbox
+/user/{id}/outbox
+
+## Shared inbox
+
+/authorize_follow
