@@ -1,0 +1,129 @@
+# TODO 設定ファイルを元に自動でライブラリインストール
+
+name = "ActivityLove"
+description = "小さなActivityPubサーバー"
+
+host = "example.com"
+
+maintainer_name = "akku"
+maintainer_email = "akku@example.com"
+
+# 別のところに置くかも
+open_registrations = false
+
+
+theme_color = "#000000"
+background_color = "#ffffff"
+
+# アカウントがなかった場合は自動作成
+proxy_account_name = "proxy"
+
+# ロールを導入するかも
+max_note_text_tength = 5000
+
+
+[db]
+# TODO NoSQL系も突っ込む
+# "postgres" "sqlite" "mysql"
+type = "postgres"
+
+[db.postgres]
+host = "localhost"
+port = 5432
+name = "activitylove"
+user = "user"
+pass = "password"
+# disable_cache = true
+# ssl = true
+
+[db.sqlite]
+# TODO ディレクトリを自動で作成する
+# TODO UNIXスタイルのパスをPathlibする
+file = "db/main.db"
+
+[db.mysql]
+host = "localhost"
+port = 5432
+name = "activitylove"
+user = "user"
+pass = "password"
+
+
+[cache]
+# "mem" "redis" "memcached" or "none"
+# mem は dict でオンメモリ
+type = "redis"
+
+[cache.redis]
+host = "localhost"
+port = 6379
+# pass = "password"
+
+[cache.memcached]
+# TODO たくさんオプションがあったけど後で
+host = "localhost"
+port = 11211
+
+
+[drive]
+# "fs" "minio" "deta"
+type = "minio"
+
+[drive.fs]
+dir = "files"
+
+# S3互換のオブジェクトストレージ
+[drive.minio]
+bucket = "activitylove"
+# 突っ込まれるフォルダ
+prefix = "files"
+baseUrl = "https://minio.example.com/activitylove"
+endpoint = "minio.example.com:443"
+region = ""
+useSSL = true
+accessKey = "XntWxJJasACN4Sy32!mqX6n"
+secretKey = "B@2JYz!Q$jiY84M6ZsyCV$g"
+
+# 戯言
+# https://gitlab.com/-/snippets/3620497
+[drive.deta]
+key = "Deta Key"
+
+
+# TODO idの種類を用意
+[id]
+type = "uuid"
+
+
+# サーバーがHTTPリクエストを送信するときに使用されます。
+# IPアドレスを隠したいときなどに有用です。
+[proxy]
+# "http" "https" "socks4" "socks5" or "none"
+type = "socks5"
+host = "proxy.example.com"
+port = "9050"
+
+
+# クライアントが使用するプロキシです。
+[mediaproxy]
+# "misskey" : https://github.com/misskey-dev/media-proxy
+#  https://proxy.misskeyusercontent.com/image.webp?url=https%3A%2F%2F...
+
+# "cors-anywhere" : https://github.com/Rob--W/cors-anywhere
+#  https://github.com/Rob--W/cors-anywhere/blob/master/README.md#example
+
+# "suwako-imgproxy" : https://gitler.moe/suwako/imgproxy
+#  https://imgproxy.076.moe/{host}/{path}
+
+# or "none"
+type = "misskey"
+host = "https://mediaproxy.example.com"
+
+[syslog]
+use = false
+# host = "localhost"
+# port = 514
+
+[http]
+# "aiohttp" "requests" "httpx" "pycurl"
+lib = "aiohttp"
