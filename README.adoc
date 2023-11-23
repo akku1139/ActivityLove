@@ -1,7 +1,7 @@
 = ActivityLove =
 小さなActivityPub実装
 
-== Features / Habits==
+== Features / Habits ==
 * ユーザーidに使用できる文字列は `[0-9a-zA-Z_\.]+` です。
 * ユーザーidは大文字と小文字が区別されません。
 
