@@ -1,3 +1,3 @@
-from . import hostmeta, nodeinfo, webfinger
+from . import hostmeta, manifest, nodeinfo, webfinger
 
-routes = hostmeta.routes + nodeinfo.routes + webfinger.routes
+routes = hostmeta.routes + manifest.routes + nodeinfo.routes + webfinger.routes
