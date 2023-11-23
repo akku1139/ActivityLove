@@ -16,4 +16,7 @@ def split(uri:str) -> tuple:
   # https://host/user/{user} https://host/user/{user}/
   elif re.match("^https://"+conf.host+"/user/[0-9a-zA-Z_\.]+/?$", uri) is not None:
     user = uri.removeprefix("^https://"+conf.host+"/user/").removesuffix("/")
+  else:
+    user = ""
+    # TODO 変なresource指定も受け入れる
   return (user, host,)

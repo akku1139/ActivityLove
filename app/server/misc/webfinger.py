@@ -4,6 +4,7 @@ from starlette.routing import Route
 import lib.split_id
 
 async def finger(request:Request):
+  # TODO クエリがなくても正しく動くように
   user, host = lib.split_id.split(request.query_params['resource'])
   return JSONResponse({
     "subject": f"acct:{user}@{host}",

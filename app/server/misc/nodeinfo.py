@@ -2,7 +2,7 @@ from starlette.routing import Route
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-import info.config as conf
+from info.config import conf
 import info.software as soft
 import info.statistics as stat
 
@@ -32,7 +32,7 @@ nodeinfo2 = {
     "activitypub"
   ],
   "services": {
-    # RSSとかAtomとか対応したいね。
+    # TODO RSSとかAtomとか対応したいね。
     "inbound": [],
     "outbound": []
   },
@@ -49,7 +49,7 @@ nodeinfo2 = {
   "metadata": {
     "nodeName": conf.name,
     "nodeDescription": conf.description,
-    "maxNoteTextLength": conf.max_note_textLength,
+    "maxNoteTextLength": conf.max_note_text_length,
     "proxyAccountName": conf.proxy_account_name,
     "themeColor": conf.theme_color,
     "maintainer": {
