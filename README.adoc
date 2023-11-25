@@ -10,6 +10,13 @@
 === Requirements ===
 * Python 3.11以降が必要です
 
+==== Pythonの主なバージョン依存要素 ====
+* pathlib >= 3.4 (`app/info/config.py`)
+* 型ヒント >= 3.5
+* async/await >= 3.5
+* removeprefix() removesuffix() >= 3.9 (`app/lib/split_id.py`)
+* tomllib >= 3.11 (`app/info/config.py`)
+
 === Install ===
 . ユーザーの作成 (任意) +
 少なくともrootユーザーで動かすことはお勧めしません。 +
