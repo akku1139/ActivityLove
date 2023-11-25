@@ -31,24 +31,24 @@ Hint: `--depth=1` を使用すると早く終わるでしょう。
 `$ python -m venv .venv` (`.venv` は `.gitignore` でサポートされています)
 
 . 依存パッケージのインストール +
-`pip install -r requirements.txt` +
+`$ pip install -r requirements.txt` +
 また、任意のASGIサーバーが必要です。 https://techpr.info/python/uvicorn-hypercorn-daphne/[比較をどうぞ] +
-`pip install (uvicorn|hypercorn|daphne|or other)` (Uvicornは動作確認済み) +
+`$ pip install (uvicorn|hypercorn|daphne|or other)` (Uvicornは動作確認済み) +
 Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うなら standard でインストールすれば高速に動きます。]
 
 . 環境変数の設定 +
-`. ./env.sh`
+`$ . ./env.sh`
 
 === Configuration ===
 `config/example.toml` を `config/default.toml` にコピーして編集します。
 
 === Launch ===
-`cd app && uvicord main:app` Uvicornの場合 +
+`$ cd app && uvicord main:app` Uvicornの場合 +
 Hint: 他の処理系を使えば早くなる可能性があります。また、`-O` `-OO` オプションでも高速化されるかもしれません。
 
 == Update ==
-. `git pull`
-. `pip install -r requirements.txt`
+. `$ git pull`
+. `$ pip install -r requirements.txt`
 . マイグレーション
 
 == LICENSE ==
