@@ -23,7 +23,6 @@
           "with": {
             "python-version": "${{ matrix.python-version }}"
           }
-
         },
         {
           "name": "Install dependencies",
