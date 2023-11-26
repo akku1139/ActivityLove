@@ -5,12 +5,12 @@ from info.config import conf
 
 async def manifest(request:Request) -> JSONResponse:
   return JSONResponse({
-    "short_name": conf.name,
-    "name": conf.name,
+    "short_name": conf["name"],
+    "name": conf["name"],
     "start_url":"/",
     "display": "standalone",
-    "background_color": conf.background_color,
-    "theme_color": conf.theme_color,
+    "background_color": conf["background_color"],
+    "theme_color": conf["theme_color"],
     "icons":[
       # TODO 直す
       {"src":"https://media.nijimiss.app/assets/app_x192.png","sizes":"192x192","type":"image/png","purpose":"maskable"},

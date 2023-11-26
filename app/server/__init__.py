@@ -1,3 +1,3 @@
-from . import misc
+from . import misc, activitypub
 
-routes = misc.routes
+routes = misc.routes + activitypub.routes

@@ -1,2 +1,2 @@
-users = 1
-posts = 0
+users: int = 1
+posts: int = 0

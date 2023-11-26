@@ -1,3 +1,4 @@
+# ? host と baseUrl の区別
 # TODO 設定ファイルを元に自動でライブラリインストール
 
 name = "ActivityLove"
@@ -19,8 +20,10 @@ background_color = "#ffffff"
 proxy_account_name = "proxy"
 
 # ロールを導入するかも
-max_note_text_tength = 5000
+max_note_text_length = 5000
 
+# URLプレビュー欲しい
+# https://github.com/misskey-dev/summaly
 
 [db]
 # TODO NoSQL系も突っ込む
@@ -73,6 +76,7 @@ type = "minio"
 dir = "files"
 
 # S3互換のオブジェクトストレージ
+# https://github.com/misskey-dev/dolphin/blob/develop/.config/example.yml#L95
 [drive.minio]
 bucket = "activitylove"
 # 突っ込まれるフォルダ
@@ -106,6 +110,8 @@ port = "9050"
 
 # クライアントが使用するプロキシです。
 [mediaproxy]
+# 大体 encodeURIComponent でどうにかなる。
+
 # "misskey" : https://github.com/misskey-dev/media-proxy
 #  https://proxy.misskeyusercontent.com/image.webp?url=https%3A%2F%2F...
 
@@ -115,9 +121,12 @@ port = "9050"
 # "suwako-imgproxy" : https://gitler.moe/suwako/imgproxy
 #  https://imgproxy.076.moe/{host}/{path}
 
-# or "none"
+# "akku-proxy" : https://misskey.04.si/notes/9gcqkfmz7u
+#  https://host/proxy/https%3A%2F%2Fmisskey.04.si%2Ffiles%2F307cc7ca-6fff-47b7-b15f-62872b0d6b16
+
 type = "misskey"
-host = "https://mediaproxy.example.com"
+# or "none"
+baseUrl = "https://mediaproxy.example.com"
 
 [syslog]
 use = false
