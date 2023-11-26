@@ -15,6 +15,7 @@
 * 型ヒント >= 3.5
 * async/await >= 3.5
 * removeprefix() removesuffix() >= 3.9 (`app/lib/split_id.py`)
+* `|` で辞書の合成 >= 3.9 (`app/lib/activityjson.py`)
 * tomllib >= 3.11 (`app/info/config.py`)
 
 === Install ===

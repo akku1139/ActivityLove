@@ -18,6 +18,8 @@
 /user/{id}/followers
 /user/{id}/following
 /user/{id}/collections/featured
+# リモートユーザーどうする?
+# このまま行くと、APとWebUIが被って地獄を見る気がする。
 
 ## Shared inbox
 /inbox
