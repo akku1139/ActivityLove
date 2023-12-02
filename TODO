@@ -1,1 +1,3 @@
 iframeから保護する
+DBとかCacheとかのWrapperをAsyncioで書く?
+configから自動で依存関係解決してくれるやつ

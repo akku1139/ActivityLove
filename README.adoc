@@ -12,10 +12,12 @@
 
 ==== Pythonの主なバージョン依存要素 ====
 * pathlib >= 3.4 (`app/info/config.py`)
+* abc (抽象クラス) >= 3.4 (``)
 * 型ヒント >= 3.5
 * async/await >= 3.5
 * removeprefix() removesuffix() >= 3.9 (`app/lib/split_id.py`)
 * `|` で辞書の合成 >= 3.9 (`app/lib/activityjson.py`)
+* match文 >= 3.10 (`app/db/__init__.py`)
 * tomllib >= 3.11 (`app/info/config.py`)
 
 === Install ===
