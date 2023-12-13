@@ -3,7 +3,7 @@ from starlette.requests import Request
 from lib.activityjson import ActivityJSONResponse
 from starlette.responses import RedirectResponse
 from info.config import conf
-from db import db
+# from db import db
 
 async def endpoint(request:Request) -> ActivityJSONResponse:
   return ActivityJSONResponse({

@@ -4,6 +4,6 @@ __pycache__/
 
 /.venv
 
-/.vscode
+/src/ActivityLove.egg-info
 
 /config/default.toml
