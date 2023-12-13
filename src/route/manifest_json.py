@@ -1,9 +1,8 @@
-from starlette.routing import Route
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from info.config import conf
 
-async def manifest(request:Request) -> JSONResponse:
+async def endpoint(request:Request) -> JSONResponse:
   return JSONResponse({
     "short_name": conf["name"],
     "name": conf["name"],
@@ -28,7 +27,3 @@ async def manifest(request:Request) -> JSONResponse:
       }
     }
   })
-
-routes = [
-  Route("/manifest.json", manifest)
-]

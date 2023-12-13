@@ -5,7 +5,7 @@ from starlette.responses import RedirectResponse
 from info.config import conf
 from db import db
 
-async def actor(request:Request) -> ActivityJSONResponse:
+async def endpoint(request:Request) -> ActivityJSONResponse:
   return ActivityJSONResponse({
     "followers": f'https://{conf["host"]}/user/{request.path_params["id"]}/followers',
     "following": f'https://{conf["host"]}/user/{request.path_params["id"]}/following',
@@ -24,8 +24,3 @@ async def actor(request:Request) -> ActivityJSONResponse:
     "url": f'https://{conf["host"]}/user/{request.path_params["id"]}',
     "discoverable": False
   }, media_type="application/xrd+xml")
-
-routes = [
-  # Route("/user/{id: str}/actor", actor)
-  Route("/user/{id:str}/actor", actor)
-]

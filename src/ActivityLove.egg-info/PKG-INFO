@@ -1,3 +1,21 @@
+Metadata-Version: 2.1
+Name: ActivityLove
+Version: 0.0.0
+Summary: A tiny ActivityPub server.
+Author: akku
+License: AGPL-3.0-or-later
+Project-URL: Homepage, https://github.com/akku1139/ActivityLove
+Project-URL: Repository, https://github.com/akku1139/ActivityLove
+Keywords: activitypub,fediverse
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Requires-Python: >=3.10
+Description-Content-Type: text/asciidoc
+License-File: LICENSE
+Requires-Dist: starlette
+Provides-Extra: dev
+Provides-Extra: toml
+Requires-Dist: toml; extra == "toml"
+
 = ActivityLove =
 小さなActivityPub実装
 
@@ -8,18 +26,18 @@
 == Setup ==
 
 === Requirements ===
-* Python 3.11以降が必要です
+* Python 3.10以降が必要です
 
 ==== 主なバージョン依存要素 ====
-* pathlib >= 3.4 (`src/info/config.py`)
+* pathlib >= 3.4 (`app/info/config.py`)
 * abc (抽象クラス) >= 3.4 (``)
 * 型ヒント >= 3.5
 * async/await >= 3.5
-* glob.glob の再帰検索 >= 3.5 (`src/autoroute.py`)
-* removeprefix() removesuffix() >= 3.9 (`src/lib/split_id.py`)
-* `|` で辞書の合成 >= 3.9 (`src/lib/activityjson.py`)
-* match文 >= 3.10 (`src/db/__init__.py`)
-* tomllib >= 3.11 (`src/info/config.py`)
+* glob.glob の再帰検索 >= 3.5 (`app/autoroute.py`)
+* removeprefix() removesuffix() >= 3.9 (`app/lib/split_id.py`)
+* `|` で辞書の合成 >= 3.9 (`app/lib/activityjson.py`)
+* match文 >= 3.10 (`app/db/__init__.py`)
+* tomllib >= 3.11 (`app/info/config.py`) (Option)
 * `pyproject.toml` からのパッケージインストール >= pip 19.0
 
 === Install ===

@@ -1,10 +1,9 @@
-from starlette.routing import Route
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
 
 from info.config import conf
 
-async def meta(request:Request) -> PlainTextResponse:
+async def endpoint(request:Request) -> PlainTextResponse:
   return PlainTextResponse(
     '<?xml version="1.0"?>'
     '<XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0">'
@@ -12,7 +11,3 @@ async def meta(request:Request) -> PlainTextResponse:
     '</XRD>',
     media_type="application/xrd+xml"
   )
-
-routes = [
-  Route("/.well-known/host-meta", meta)
-]

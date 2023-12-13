@@ -1,0 +1,30 @@
+[project]
+name = "ActivityLove"
+version = "0.0.0"
+description = "A tiny ActivityPub server."
+keywords = ["activitypub", "fediverse",]
+classifiers = [
+  "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)"
+]
+authors = [
+  { name = "akku" },
+]
+
+readme = { file = "README.adoc", content-type = "text/asciidoc" }
+license = {text = "AGPL-3.0-or-later"}
+
+requires-python = ">=3.11"
+
+dependencies = [
+  "starlette",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[project.urls]
+Homepage = "https://github.com/akku1139/ActivityLove"
+# Documentation = "https://github.com/akku1139/ActivityLove"
+Repository = "https://github.com/akku1139/ActivityLove"
+
+# sys.path 追加もしたいけど、 Poetry 入れたくないので。

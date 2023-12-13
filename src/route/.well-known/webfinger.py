@@ -1,9 +1,8 @@
 from starlette.responses import JSONResponse
 from starlette.requests import Request
-from starlette.routing import Route
 import lib.split_id
 
-async def finger(request:Request) -> JSONResponse:
+async def endpoint(request:Request) -> JSONResponse:
   # TODO クエリがなくても正しく動くように
   # ? 型品と入れたら壊れるのなぁぜなぁぜ?
   user, host, status = lib.split_id.split(request.query_params['resource'])
@@ -30,7 +29,3 @@ async def finger(request:Request) -> JSONResponse:
       }
     ]
   }, media_type="application/jrd+json")
-
-routes = [
-  Route('/.well-known/webfinger', finger),
-]
