@@ -1,33 +1,20 @@
 import glob
-from types import ModuleType
 from starlette.routing import Route
-import importlib
-
-special_route:dict = {
-  "well-known": ".well-known",
-  "__init__": "",
-  "2_0": "2.0",
-  "2_1": "2.1",
-  "_json": ".json",
-}
+# from starlette.responses import Response
 
 routes:list = []
 # forはスコープを作らない
 methods:list = []
-mod:ModuleType
+mod:dict = {}
 
 for p in glob.glob("**/*.py", root_dir="route", recursive=True):
-  #mod = __import__("route."+p.removesuffix(".py").replace('/', '.'))
-  mod = importlib.import_module("route."+p.removesuffix(".py").replace('/', '.'))
+  with open("route/"+p, "r", encoding="utf-8") as fp:
+    exec(fp.read(), mod)
   try:
-    methods = mod.methods
-  except:
+    methods = mod["methods"]
+  except KeyError:
     methods = ["GET"]
 
-  path:str = "/" + (p.removesuffix(".py"))
-  for r in special_route:
-    path = path.replace(r, special_route[r])
+  path:str = "/" + (p.removesuffix(".py").replace("__init__", ""))
 
-  print(f'mod: {"route."+p.removesuffix(".py").replace('/', '.')}\npath: {path}')
-  print(mod)
-  routes.append(Route(path, endpoint=mod.endpoint, methods=methods))
+  routes.append(Route(path, endpoint=mod["endpoint"], methods=methods))
