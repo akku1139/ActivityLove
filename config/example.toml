@@ -43,7 +43,7 @@ pass = "password"
 [db.sqlite]
 # TODO ディレクトリを自動で作成する
 # TODO UNIXスタイルのパスをPathlibする
-file = "db/main.db"
+file = "data/db/main.db"
 
 [db.mysql]
 host = "localhost"
@@ -51,9 +51,6 @@ port = 5432
 name = "activitylove"
 user = "user"
 pass = "password"
-
-[db.json]
-file = "db/main.json"
 
 
 [cache]

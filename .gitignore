@@ -7,3 +7,5 @@ __pycache__/
 /src/ActivityLove.egg-info
 
 /config/default.toml
+
+/data
