@@ -5,6 +5,9 @@ import lib.split_id
 async def endpoint(request:Request) -> JSONResponse:
   # TODO クエリがなくても正しく動くように
   # ? 型品と入れたら壊れるのなぁぜなぁぜ?
+  user: str
+  host: str
+  status: int
   user, host, status = lib.split_id.split(request.query_params['resource'])
   return JSONResponse({
     "subject": f"acct:{user}@{host}",

@@ -15,6 +15,6 @@ for p in glob.glob("**/*.py", root_dir="route", recursive=True):
   except KeyError:
     methods = ["GET"]
 
-  path:str = "/" + (p.removesuffix(".py").replace("__init__", ""))
+  path:str = "/" + (p.removesuffix(".py").replace("index", ""))
 
   routes.append(Route(path, endpoint=mod["endpoint"], methods=methods))
