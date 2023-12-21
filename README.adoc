@@ -49,7 +49,7 @@ Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うな�
 
 === Launch ===
 `$ cd src && uvicord main:app` Uvicornの場合 +
-Hint: 他の処理系を使えば早くなる可能性があります。また、`-O` `-OO` オプションでも高速化されるかもしれません。
+Hint: 他の処理系を使えば早くなる可能性があります。
 
 == Update ==
 . `$ git pull`
