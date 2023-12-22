@@ -28,7 +28,7 @@ max_note_text_length = 5000
 
 [db]
 # TODO NoSQL系も突っ込む
-# "postgres" "sqlite" "mysql" "json"
+# "postgres" "sqlite" "mysql"
 type = "postgres"
 
 [db.postgres]
@@ -54,8 +54,9 @@ pass = "password"
 
 
 [cache]
-# "mem" "redis" "memcached" or "none"
+# "mem" "redis" "memcached" "sqlite" or "none"
 # mem は dict Python内
+# sqlite:///:memory:
 type = "redis"
 
 [cache.redis]
