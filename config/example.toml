@@ -27,30 +27,18 @@ max_note_text_length = 5000
 
 
 [db]
-# TODO NoSQL系も突っ込む
-# "postgres" "sqlite" "mysql"
-type = "postgres"
-
-[db.postgres]
-host = "localhost"
-port = 5432
-name = "activitylove"
+# http://docs.sqlalchemy.org/en/latest/core/engines.html
+# "postgres" "sqlite" "mysql" or etc...
+dialect = "postgres"
+engine = ""
 user = "user"
 pass = "password"
+host = "localhost"
+port = 5432
+database = "activitylove"
+file = "data/db.sqlite"
 # disable_cache = true
 # ssl = true
-
-[db.sqlite]
-# TODO ディレクトリを自動で作成する
-# TODO UNIXスタイルのパスをPathlibする
-file = "data/db/main.db"
-
-[db.mysql]
-host = "localhost"
-port = 5432
-name = "activitylove"
-user = "user"
-pass = "password"
 
 
 [cache]
