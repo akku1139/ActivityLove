@@ -26,7 +26,7 @@ else:
 
 engine = create_async_engine(
   DATABASE,
-  encoding="utf-8",
+  # encoding="utf-8",
   echo=False
 )
 
