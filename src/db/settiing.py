@@ -1,7 +1,8 @@
 from info.config import conf
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, DeclarativeBase
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 # 接続先DBの設定
@@ -25,21 +26,18 @@ else:
   )
 
 
-# Engine の作成
-Engine = create_engine(
+engine = create_async_engine(
   DATABASE,
   encoding="utf-8",
   echo=False
 )
-Base = declarative_base()
 
-# Sessionの作成
-session = Session(
-  autocommit = False,
-  autoflush = True,
-  bind = Engine
-)
+async_session = async_sessionmaker(engine, expire_on_commit=False)
 
-# modelで使用する
-Base = declarative_base()
-Base.query = session.query_property()
+class Base(DeclarativeBase):
+    pass
+
+
+async def get_session():
+    async with async_session() as session:
+        yield session
