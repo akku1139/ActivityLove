@@ -28,16 +28,24 @@ max_note_text_length = 5000
 
 [db]
 # http://docs.sqlalchemy.org/en/latest/core/engines.html
+
+# When using postgres, mysql, etc.
 # "postgres" "sqlite" "mysql" or etc...
 dialect = "postgres"
-engine = ""
+# use asyncio driver
+driver = ""
 user = "user"
 pass = "password"
 host = "localhost"
 port = 5432
 database = "activitylove"
-file = "data/db.sqlite"
-# disable_cache = true
+
+# Use when using sqlite3.
+# The base of the path is the project root.
+dialect = "sqlite"
+# database = "data/db.sqlite"
+
+# 検討中のオプション。Postgresに存在することを確認。
 # ssl = true
 
 
@@ -123,7 +131,3 @@ baseUrl = "https://mediaproxy.example.com"
 use = false
 # host = "localhost"
 # port = 514
-
-[http]
-# "aiohttp" "requests" "httpx" "pycurl"
-lib = "aiohttp"
