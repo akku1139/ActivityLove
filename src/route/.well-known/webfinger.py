@@ -4,7 +4,6 @@ import lib.split_id
 
 async def endpoint(request:Request) -> JSONResponse:
   # TODO クエリがなくても正しく動くように
-  # ? 型品と入れたら壊れるのなぁぜなぁぜ?
   user: str
   host: str
   status: int
