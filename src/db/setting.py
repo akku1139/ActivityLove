@@ -26,6 +26,8 @@ else:
 
 engine = create_async_engine(
   DATABASE,
+  # DBごとに変えないといけない可能性ある
+  # https://github.com/search?q=repo%3Asqlalchemy%2Fsqlalchemy%20encoding&type=code
   # encoding="utf-8",
   echo=False
 )
