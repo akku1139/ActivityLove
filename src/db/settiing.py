@@ -1,9 +1,7 @@
 from info.config import conf
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
 
 # 接続先DBの設定
 # https://docs.sqlalchemy.org/en/20/core/engines.html
