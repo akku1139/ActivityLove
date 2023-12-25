@@ -16,7 +16,7 @@ else:
 
   from sqlalchemy import URL
   DATABASE = URL.create(
-    dialect,
+    drivername,
     username = conf["db"]["user"],
     password = conf["db"]["pass"],
     host = conf["db"]["host"],
