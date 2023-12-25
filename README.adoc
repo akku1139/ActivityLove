@@ -12,7 +12,6 @@
 
 ==== 主なバージョン依存要素 ====
 * pathlib >= 3.4 (`src/info/config.py`)
-* abc (抽象クラス) >= 3.4 (``)
 * 型ヒント >= 3.5
 * async/await >= 3.5
 * glob.glob の再帰検索 >= 3.5 (`src/autoroute.py`)
