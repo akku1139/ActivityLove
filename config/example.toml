@@ -43,6 +43,7 @@ database = "activitylove"
 # Use when using sqlite3.
 # The base of the path is the project root.
 # dialect = "sqlite"
+# driver = "aiosqlite" etc...
 # database = "data/db.sqlite"
 
 # 検討中のオプション。Postgresに存在することを確認。
