@@ -4,7 +4,7 @@ from sqlalchemy import Column, String, DateTime
 class User(Base):
   __tablename__:str = "user"
 
-  id = Column("id", String)
+  id = Column("id", String, primary_key=True)
 
   name = Column("name", String)
   profile = Column("profile", String)
