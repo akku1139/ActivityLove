@@ -23,6 +23,6 @@ async def endpoint(request:Request) -> ActivityJSONResponse | Response:
       "type": "Person",
       "url": f'https://{conf["host"]}/user/{request.path_params["id"]}',
       "discoverable": False # これもよくわからん
-    }, media_type="application/xrd+xml")
+    }, media_type="application/activity+json")
   else:
     return Response("User not found", status_code=404)
