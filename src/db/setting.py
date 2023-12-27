@@ -38,8 +38,3 @@ async_session = async_sessionmaker(engine, expire_on_commit=False)
 
 class Base(AsyncAttrs, DeclarativeBase):
   pass
-
-
-async def get_session():
-  async with async_session() as session:
-    yield session
