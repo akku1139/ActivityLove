@@ -6,11 +6,13 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 # 接続先DBの設定
 # https://docs.sqlalchemy.org/en/20/core/engines.html
 if conf["db"]["dialect"] == "sqlite":
-  DATABASE = "sqlite:///../../"+conf["db"]["database"]
+  # pysqliteはaioじゃなくて使えないので必ず他ドライバーを使うこと。
+  DATABASE = f'sqlite:///../../{conf["db"]["database"]}+{conf["db"]["driver"]}'
 else:
   if conf["db"]["driver"] != "":
     drivername = f'{conf["db"]["dialect"]}+{conf["db"]["driver"]}'
   else:
+    # 多分ここに流れてくることはない。
     drivername = conf["db"]["dialect"]
 
   from sqlalchemy import URL
