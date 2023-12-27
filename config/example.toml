@@ -44,7 +44,7 @@ database = "activitylove"
 # dialect = "sqlite"
 # driver = "aiosqlite" etc...
 ## Depending on the problem, you may need to specify an absolute path.
-# database = "data/db.sqlite"
+# database = "/data/db.sqlite"
 
 # 検討中のオプション。Postgresに存在することを確認。
 # ssl = true
