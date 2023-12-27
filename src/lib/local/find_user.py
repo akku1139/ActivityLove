@@ -1,4 +1,3 @@
-from db.setting import get_session
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from db.model.user import User
