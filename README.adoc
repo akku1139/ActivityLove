@@ -38,17 +38,20 @@ Hint: `--depth=1` を使用すると早く終わるでしょう。
 `$ pip install -e.` +
 また、任意のASGIサーバーが必要です。 https://techpr.info/python/uvicorn-hypercorn-daphne/[比較をどうぞ] +
 `$ pip install (uvicorn|hypercorn|daphne|or other)` (Uvicornは動作確認済み) +
-Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うなら standard でインストールすれば高速に動きます。]
+Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うなら standard でインストールすれば高速に動きます。] +
+設定したデータベースのドライバも必要です。インストールしてください。
 
 . 環境変数の設定 +
 `$ . ./env.sh`
+
+. データベースを作成 +
+`$ kumade create_db`
 
 === Configuration ===
 `config/example.toml` を `config/default.toml` にコピーして編集します。
 
 === Launch ===
-`$ cd src && uvicord main:app` Uvicornの場合 +
-Hint: 他の処理系を使えば早くなる可能性があります。
+`$ cd src && uvicord main:app` Uvicornの場合
 
 == Update ==
 . `$ git pull`

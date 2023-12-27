@@ -17,7 +17,8 @@ requires-python = ">=3.11"
 
 dependencies = [
   "starlette ~= 0.34.0",
-  "sqlalchemy ~= 2.0.23"
+  "sqlalchemy ~= 2.0.23",
+  "kumade ~= 0.1.0",
 ]
 
 [project.optional-dependencies]
