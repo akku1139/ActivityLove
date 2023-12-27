@@ -1,7 +1,7 @@
 from info.config import conf
 
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncAttrs
 
 # 接続先DBの設定
 # https://docs.sqlalchemy.org/en/20/core/engines.html
@@ -36,7 +36,7 @@ engine = create_async_engine(
 
 async_session = async_sessionmaker(engine, expire_on_commit=False)
 
-class Base(DeclarativeBase):
+class Base(AsyncAttrs, DeclarativeBase):
   pass
 
 
