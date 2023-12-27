@@ -2,10 +2,12 @@ from starlette.requests import Request
 from lib.activityjson import ActivityJSONResponse
 from starlette.responses import Response, RedirectResponse
 from info.config import conf
-from lib.local import find_user
+from db.setting import get_session
+from lib.local.find_user import find_user
 
 async def endpoint(request:Request) -> ActivityJSONResponse | Response:
-  if find_user(request.path_params["id"]):
+  db = await get_session()
+  if(await find_user(db, request.path_params["id"])):
     return ActivityJSONResponse({
       "followers": f'https://{conf["host"]}/user/{request.path_params["id"]}/followers',
       "following": f'https://{conf["host"]}/user/{request.path_params["id"]}/following',
