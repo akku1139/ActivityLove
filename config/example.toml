@@ -29,10 +29,10 @@ max_note_text_length = 5000
 [db]
 # http://docs.sqlalchemy.org/en/latest/core/engines.html
 
-# When using postgres, mysql, etc.
-# "postgres" "sqlite" "mysql" or etc...
+## When using postgres, mysql, etc.
+## "postgres" "sqlite" "mysql" or etc...
 dialect = "postgres"
-# use asyncio driver
+## use asyncio driver
 driver = ""
 user = "user"
 pass = "password"
@@ -40,10 +40,10 @@ host = "localhost"
 port = 5432
 database = "activitylove"
 
-# Use when using sqlite3.
-# The base of the path is the project root.
+## Use when using sqlite3.
 # dialect = "sqlite"
 # driver = "aiosqlite" etc...
+## Depending on the problem, you may need to specify an absolute path.
 # database = "data/db.sqlite"
 
 # 検討中のオプション。Postgresに存在することを確認。

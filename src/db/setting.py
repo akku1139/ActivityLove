@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 # https://docs.sqlalchemy.org/en/20/core/engines.html
 if conf["db"]["dialect"] == "sqlite":
   # pysqliteはaioじゃなくて使えないので必ず他ドライバーを使うこと。
-  DATABASE = f'sqlite+{conf["db"]["driver"]}:///../../{conf["db"]["database"]}'
+  DATABASE = f'sqlite+{conf["db"]["driver"]}:///{conf["db"]["database"]}'
 else:
   if conf["db"]["driver"] != "":
     drivername = f'{conf["db"]["dialect"]}+{conf["db"]["driver"]}'
