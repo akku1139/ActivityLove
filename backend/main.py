@@ -17,7 +17,7 @@ app = Starlette(
   debug=False,
   routes=[
     Mount('/', app=StaticFiles(directory="../frontend/build", html=True), name="frontend"),
-    autoroute.routes
+    *autoroute.routes
   ],
   exception_handlers=exception_handlers
 )
