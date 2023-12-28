@@ -28,4 +28,7 @@ Homepage = "https://github.com/akku1139/ActivityLove"
 # Documentation = "https://github.com/akku1139/ActivityLove"
 Repository = "https://github.com/akku1139/ActivityLove"
 
+[tool.setuptools]
+package-dir = {"" = "backend"}
+
 # sys.path 追加もしたいけど、 Poetry 入れたくないので。

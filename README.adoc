@@ -10,17 +10,6 @@
 === Requirements ===
 * Python 3.11以降が必要です
 
-==== 主なバージョン依存要素 ====
-* pathlib >= 3.4 (`src/info/config.py`)
-* 型ヒント >= 3.5
-* async/await >= 3.5
-* glob.glob の再帰検索 >= 3.5 (`src/autoroute.py`)
-* removeprefix() removesuffix() >= 3.9 (`src/lib/split_id.py`)
-* `|` で辞書の合成 >= 3.9 (`src/lib/activityjson.py`)
-* match文 >= 3.10 (`src/db/__init__.py`)
-* tomllib >= 3.11 (`src/info/config.py`)
-* `pyproject.toml` からのパッケージインストール >= pip 19.0
-
 === Install ===
 . ユーザーの作成 (任意) +
 少なくともrootユーザーで動かすことはお勧めしません。 +
@@ -51,7 +40,7 @@ Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うな�
 `config/example.toml` を `config/default.toml` にコピーして編集します。
 
 === Launch ===
-`$ cd src && uvicord main:app` Uvicornの場合
+`$ cd backend && uvicord main:app` Uvicornの場合
 
 == Update ==
 . `$ git pull`
