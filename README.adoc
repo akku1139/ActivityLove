@@ -9,6 +9,8 @@
 
 === Requirements ===
 * Python 3.11以降が必要です
+* Node.jsかなにかが必要です
+* npmとかが必要です
 
 === Install ===
 . ユーザーの作成 (任意) +
@@ -25,6 +27,7 @@ Hint: `--depth=1` を使用すると早く終わるでしょう。
 
 . 依存パッケージのインストール +
 `$ pip install -e.` +
+`$ npm -C frontend install`
 また、任意のASGIサーバーが必要です。 https://techpr.info/python/uvicorn-hypercorn-daphne/[比較をどうぞ] +
 `$ pip install (uvicorn|hypercorn|daphne|or other)` (Uvicornは動作確認済み) +
 Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うなら standard でインストールすれば高速に動きます。] +
@@ -35,6 +38,9 @@ Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うな�
 
 . データベースを作成 +
 `$ cd migration; python main.py; cd ..`
+
+. フロントエンドのビルド +
+`$ npm -C frontend run build`
 
 === Configuration ===
 `config/example.toml` を `config/default.toml` にコピーして編集します。

@@ -1,7 +1,17 @@
 {
   "recommendations": [
     "editorconfig.editorconfig",
+    "oderwat.indent-rainbow",
+    "aaron-bond.better-comments",
+    "asciidoctor.asciidoctor-vscode",
+    "usernamehw.errorlens",
+    "tamasfe.even-better-toml",
+    // backend
     "ms-python.python",
-    "ms-python.pylint"
+    "ms-python.pylint",
+    // frontend
+    "svelte.svelte-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "dbaeumer.vscode-eslint",
   ]
 }
