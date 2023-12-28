@@ -3,6 +3,7 @@ from starlette.exceptions import HTTPException
 from starlette.requests import Request
 from starlette.responses import FileResponse
 from starlette.staticfiles import StaticFiles
+from starlette.routing import Mount
 import autoroute
 
 def index(request: Request, exc: HTTPException):
