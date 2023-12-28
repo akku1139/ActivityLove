@@ -132,3 +132,10 @@ baseUrl = "https://mediaproxy.example.com"
 use = false
 # host = "localhost"
 # port = 514
+
+# Authentication method to use.
+# One or more must be enabled (set True).
+# Also, once you enable a method, you should not disable it later.
+# Default value is False.
+[auth]
+password = True
