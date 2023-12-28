@@ -9,12 +9,9 @@ __pycache__/
 
 # frontend
 node_modules
-/build
-/.svelte-kit
-/package
-.env
-.env.*
-!.env.example
+/frontend/build
+/frontend/.svelte-kit
+/frontend/package
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
@@ -24,3 +21,6 @@ vite.config.ts.timestamp-*
 # userdata
 /config/default.toml
 /data
+.env
+.env.*
+!.env.example
