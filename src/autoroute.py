@@ -38,7 +38,7 @@ def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
 
   return [Mount(mount, routes=routes)]
 
-autoroute("route", "/")
+routes = autoroute("route", "/")
 
 """
 *.py files placed in the routing target directory will be automatically routed.
