@@ -36,11 +36,11 @@ Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うな�
 . 環境変数の設定 +
 `$ . ./env.sh`
 
-. データベースを作成 +
-`$ cd migration; python main.py; cd ..`
-
 . フロントエンドのビルド +
 `$ npm -C frontend run build`
+
+. データベースを作成 +
+`$ cd migration; python main.py; cd ..`
 
 === Configuration ===
 `config/example.toml` を `config/default.toml` にコピーして編集します。
@@ -50,8 +50,10 @@ Hint: https://fastapi.tiangolo.com/ja/deployment/manually/[Uvicornを使うな�
 
 == Update ==
 . `$ git pull`
-. `$ pip install -r requirements.txt`
-. マイグレーション
+. `$ pip install -e .`
+. `$ npm -C frontend install`
+. `$ npm -C frontend run build`
+. `$ cd migration; python main.py; cd ..`
 
 == LICENSE ==
 ActivityLove : A tiny ActivityPub server
