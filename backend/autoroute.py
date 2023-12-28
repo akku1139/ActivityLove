@@ -1,6 +1,6 @@
 import glob
 import typing
-from starlette.routing import BaseRoute, Route, Mount
+from starlette.routing import BaseRoute, Route
 
 def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
   """
@@ -36,7 +36,7 @@ def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
 
     routes.append(Route(path, endpoint=mod["endpoint"], methods=methods))
 
-  return [Mount(mount, routes=routes)]
+  return routes
 
 routes = autoroute("route", "/")
 
