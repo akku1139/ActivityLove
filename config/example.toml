@@ -16,7 +16,7 @@ open_registrations = false
 theme_color = "#000000"
 background_color = "#ffffff"
 
-# アカウントがなかった場合は自動作成
+# アカウントがなかった場合は自動作成かも
 proxy_account_name = "proxy"
 
 # ロールを導入するかも
@@ -43,8 +43,9 @@ database = "activitylove"
 ## Use when using sqlite3.
 # dialect = "sqlite"
 # driver = "aiosqlite" etc...
-## Depending on the problem, you may need to specify an absolute path.
-# database = "/data/db.sqlite"
+## The base path is "../" from the project root, that is, the current file.
+## It is also possible to use absolute paths.
+# database = "data/db.sqlite"
 
 # 検討中のオプション。Postgresに存在することを確認。
 # ssl = true

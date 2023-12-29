@@ -1,5 +1,7 @@
 import glob
 import typing
+import os
+
 from starlette.routing import BaseRoute, Route, Mount
 
 def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
@@ -10,9 +12,7 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   ----------
   dir : str
     Directory to configure routing.
-    Must not start with "/".
-    If you don't do that, it will search from the root of the file system.
-    example: if you want to specify "src/routes", pass "route".
+    Relative path from "backend/".
   path : str
     Path to mount the route.
 
@@ -24,6 +24,8 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   routes:typing.Sequence[BaseRoute] = []
   methods:list = []
   mod:dict = {}
+
+  dir = os.path.dirname(__file__)
 
   for p in glob.glob("**/*.py", root_dir=dir, recursive=True, include_hidden=True):
     with open(dir+"/"+p, "r", encoding="utf-8") as fp:
