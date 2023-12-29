@@ -1,0 +1,1 @@
+I think that mounting the path will make routing faster than flattening it, so I will set autoroute in units of `/api/v*`.
