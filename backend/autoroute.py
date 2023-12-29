@@ -32,9 +32,9 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
     except KeyError:
       methods = ["GET"]
 
-    path:str = "/" + (p.removesuffix(".py").replace("index", ""))
+    route_path:str = "/" + (p.removesuffix(".py").replace("index", ""))
 
-    routes.append(Route(path, mod["endpoint"], methods=methods))
+    routes.append(Route(route_path, mod["endpoint"], methods=methods))
 
   if path == "/":
     return routes
