@@ -1,8 +1,8 @@
 import glob
 import typing
-from starlette.routing import BaseRoute, Route
+from starlette.routing import BaseRoute, Route, Mount
 
-def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
+def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   """
   Automatic routing for Starlette.
 
@@ -11,7 +11,7 @@ def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
   dir : str
     Directory to configure routing.
     example: if you want to specify "src/routes", pass "route".
-  mount : str
+  path : str
     Path to mount the route.
 
   Returns
@@ -36,7 +36,10 @@ def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
 
     routes.append(Route(path, mod["endpoint"], methods=methods))
 
-  return routes
+  if path == "/":
+    return routes
+  else:
+    return [Mount(path, routes=routes)]
 
 routes = autoroute("route", "/")
 
