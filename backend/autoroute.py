@@ -34,7 +34,7 @@ def autoroute(dir:str, mount:str) -> typing.Sequence[BaseRoute]:
 
     path:str = "/" + (p.removesuffix(".py").replace("index", ""))
 
-    routes.append(Route(path, endpoint=mod["endpoint"], methods=methods))
+    routes.append(Route(path, mod["endpoint"], methods=methods))
 
   return routes
 
