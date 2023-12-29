@@ -42,7 +42,7 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
     else: # Routing by HTTP method name.
       for method in ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE"]:
         if method.lower() in mod:
-          endpoit = mod[method.lower()]
+          endpoint = mod[method.lower()]
           routes.append(Route(route_path, endpoint, methods=[method]))
 
   if path == "/":
