@@ -26,7 +26,7 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   mod:dict = {}
 
   for p in glob.glob("**/*.py", root_dir=dir, recursive=True, include_hidden=True):
-    with open("route/"+p, "r", encoding="utf-8") as fp:
+    with open(dir+"/"+p, "r", encoding="utf-8") as fp:
       exec(fp.read(), mod) # pylint: disable=exec-used
 
     route_path:str = "/" + (p.removesuffix(".py").replace("index", ""))
