@@ -13,6 +13,6 @@ exception_handlers = {
 
 api = Starlette(
   debug=False,
-  routes=autoroute("endpoint", "/"),
+  routes=autoroute("api/v1/endpoint", "/"),
   exception_handlers=exception_handlers
 )
