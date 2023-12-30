@@ -12,7 +12,6 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   ----------
   dir : str
     Directory to configure routing.
-    Relative path from "backend/".
   path : str
     Path to mount the route.
 
@@ -24,8 +23,6 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   routes:typing.Sequence[BaseRoute] = []
   methods:list = []
   mod:dict = {}
-
-  dir = os.path.dirname(__file__)
 
   for p in glob.glob("**/*.py", root_dir=dir, recursive=True, include_hidden=True):
     with open(dir+"/"+p, "r", encoding="utf-8") as fp:
