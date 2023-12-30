@@ -12,6 +12,7 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   ----------
   dir : str
     Directory to configure routing.
+    Relative path from "backend/".
   path : str
     Path to mount the route.
 
