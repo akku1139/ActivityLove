@@ -1,6 +1,7 @@
 from autoroute import autoroute
 from starlette.applications import Starlette
 from starlette.requests import Request
+from starlette.exceptions import HTTPException
 from starlette.responses import Response
 
 def notfound(request: Request, exc: HTTPException) -> Response:
