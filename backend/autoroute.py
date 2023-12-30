@@ -52,10 +52,6 @@ def autoroute(dir:str, path:str="/") -> typing.Sequence[BaseRoute]:
   else:
     return [Mount(path, routes=routes)]
 
-routes = \
-  autoroute("route", "/") + \
-  autoroute("api/v1", "/api/v1")
-
 """
 *.py files placed in the routing target directory will be automatically routed.
 The template is as follows.

@@ -4,9 +4,11 @@ from starlette.requests import Request
 from starlette.responses import FileResponse
 from starlette.staticfiles import StaticFiles
 from starlette.routing import Mount
-import autoroute
+from autoroute import autoroute
 
-def index(request: Request, exc: HTTPException):
+import api.v1
+
+def index(request: Request, exc: HTTPException) -> FileResponse:
   return FileResponse("../frontend/build/200.html", media_type="text/html")
 
 exception_handlers = {
@@ -14,10 +16,10 @@ exception_handlers = {
 }
 
 app = Starlette(
-  debug=False,
   routes=[
-    *autoroute.routes,
-    Mount('/', app=StaticFiles(directory="../frontend/build", html=True), name="frontend")
+    autoroute("route", "/"),
+    Mount('/api/v1', app=api.v1.api),
+    Mount('/', app=StaticFiles(directory="../frontend/build", html=True))
   ],
   exception_handlers=exception_handlers
 )
