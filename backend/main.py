@@ -17,7 +17,7 @@ exception_handlers = {
 
 app = Starlette(
   routes=[
-    autoroute("route", "/"),
+    *autoroute("route", "/"),
     Mount('/api/v1', app=api.v1.api),
     Mount('/', app=StaticFiles(directory="../frontend/build", html=True))
   ],
