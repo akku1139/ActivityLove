@@ -9,21 +9,21 @@ async def endpoint(request:Request) -> ActivityJSONResponse | Response:
   async with async_session() as db:
     if(await find_user(db, request.path_params["id"])):
       return ActivityJSONResponse({
-        "followers": f'https://{conf["host"]}/user/{request.path_params["id"]}/followers',
-        "following": f'https://{conf["host"]}/user/{request.path_params["id"]}/following',
+        "followers": f'https://{conf["host"]}/profile/{request.path_params["id"]}/followers',
+        "following": f'https://{conf["host"]}/profile/{request.path_params["id"]}/following',
         "icon": {
         },
-        "id": f'https://{conf["host"]}/user/{request.path_params["id"]}/actor',
-        "inbox": f'https://{conf["host"]}/user/{request.path_params["id"]}/inbox',
+        "id": f'https://{conf["host"]}/profile/{request.path_params["id"]}/actor',
+        "inbox": f'https://{conf["host"]}/profile/{request.path_params["id"]}/inbox',
         "name": "Actorの名前",
-        "outbox": f'https://{conf["host"]}/user/{request.path_params["id"]}/outbox',
+        "outbox": f'https://{conf["host"]}/profile/{request.path_params["id"]}/outbox',
         "preferredUsername": "",
         "publicKey": {
           # わからないので後で
         },
         "summary": "Actorの説明",
         "type": "Person",
-        "url": f'https://{conf["host"]}/user/{request.path_params["id"]}',
+        "url": f'https://{conf["host"]}/profile/{request.path_params["id"]}',
         "discoverable": False # これもよくわからん
       }, media_type="application/activity+json")
     else:

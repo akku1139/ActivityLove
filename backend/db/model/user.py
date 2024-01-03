@@ -1,7 +1,12 @@
 from db.setting import Base
 from sqlalchemy import Column, String, DateTime
 
-class User(Base):
+class Account(Base):
+  __tablename__ == "account"
+
+  id = Column("id", String, primary_key=True)
+
+class Profile(Base):
   __tablename__:str = "user"
 
   id = Column("id", String, primary_key=True)
